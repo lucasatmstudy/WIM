@@ -1,6 +1,6 @@
 <?php namespace View;
 
-use View;
+use View\View;;
 
 class ViewConnect extends View {
     //ATTRIBUT
