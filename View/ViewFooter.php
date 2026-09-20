@@ -50,6 +50,7 @@ class ViewFooter {
                     </div>
                 </footer>
             </body>
+            <script src="./css/style/css"></script>
             </html>
 <?php
         $this->buffer = ob_get_clean();
