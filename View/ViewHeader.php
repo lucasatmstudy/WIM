@@ -33,26 +33,34 @@ class ViewHeader{
                 <header>
                     <nav aria-label="navigation principale">
                         <ul class="navigationPrincipale">
-                            <li id="logoImage"><a class="navBarLogo" href="./index.html"><img id="logo" src="./assets/pico-logo-wim/Logo.svg" alt="Logo"></a></li>
-                            <li id="logoText"><a class="navBarText" href="/index.html">WORLD IS MINE</a></li>
-                            <li id="elAccueil"><a class="navBar" href="/index.html">Accueil</a></li>
-                            <li id="elCreer"><a class="navBar" href="A definir">Créer</a></li>
-                            <li id="elAlbum"><a class="navBar" href="A definir">Albums</a></li>
-                            <li id="elAmis"><a class="navBar" href="A definir">Amis</a></li>
-                            <li id="elExplorer"><a class="navBar" href="A definir">Explorer</a></li>
-                            <li id="elCompte"><a class="navBar" href="A definir">Compte</a></li>
+                            <li id="logoImage"><a class="navBarLogo" href="<?= $_ENV['accueil'] ?>"><img id="logo" src="./assets/pico-logo-wim/Logo.svg" alt="LogoImage"></a></li>
+                            <li id="logoText"><a class="navBarText" href="<?= $_ENV['accueil'] ?>">WORLD IS MINE</a></li>
+                            <li id="elAccueil"><a class="navBar" href="<?= $_ENV['accueil'] ?>">Accueil</a></li>
+                            <li id="elCreer"><a class="navBar" href="<?= $_ENV['creer'] ?>">Créer</a></li>
+                            <li id="elAlbum"><a class="navBar" href="<?= $_ENV['albums'] ?>">Albums</a></li>
+                            <li id="elAmis"><a class="navBar" href="<?= $_ENV['amis'] ?>">Amis</a></li>
+                            <li id="elExplorer"><a class="navBar" href="<?= $_ENV['explorer'] ?>">Explorer</a></li>
+<?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): ?>
+                            <li id="elCompte"><a class="navBar" href="<?= $_ENV['compte'] ?>">Compte</a></li>
+<?php else: ?>
+                            <li id="elCompte"><a class="navBar" href="<?= $_ENV['connexion'] ?>">Connexion</a></li>
+<?php endif; ?>
                             <li id="logoBurger"><button class="navBarBurger" aria-label="Ouvrir le menu burger" aria-expanded="false"><img id="imageBurger" src="./assets/pico-logo-wim/burgerV1.svg" alt="Menu burger"></button></li>
                         </ul>
                     </nav>
                     <nav aria-label="navigation burger">
                         <ul class="navigationBurger">
                             <li id="elFermer"><img src="./assets/pico-logo-wim/croixLarge.svg" alt="Fermeture menu burger"></li>
-                            <li id="elAccueilBurger"><a class="navBurger" href="/index.html">Accueil</a></li>
-                            <li id="elCreerBurger"><a class="navBurger" href="A definir">Créer</a></li>
-                            <li id="elAlbumBurger"><a class="navBurger" href="A definir">Album</a></li>
-                            <li id="elExplorerBurger"><a class="navBurger" href="A definir">Amis</a></li>
-                            <li id="elAmisBurger"><a class="navBurger" href="A definir">Explorer</a></li>
-                            <li id="elCompteBurger"><a class="navBurger" href="A definir">Compte</a></li>
+                            <li id="elAccueilBurger"><a class="navBurger" href="<?= $_ENV['accueil'] ?>">Accueil</a></li>
+                            <li id="elCreerBurger"><a class="navBurger" href="<?= $_ENV['creer'] ?>">Créer</a></li>
+                            <li id="elAlbumBurger"><a class="navBurger" href="<?= $_ENV['albums'] ?>">Album</a></li>
+                            <li id="elExplorerBurger"><a class="navBurger" href="<?= $_ENV['amis'] ?>">Amis</a></li>
+                            <li id="elAmisBurger"><a class="navBurger" href="<?= $_ENV['explorer'] ?>">Explorer</a></li>
+<?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): ?>
+                            <li id="elCompteBurger"><a class="navBurger" href="<?= $_ENV['compte'] ?>">Compte</a></li>
+<?php else: ?>
+                            <li id="elCompteBurger"><a class="navBurger" href="<?= $_ENV['connexion'] ?>">Connexion</a></li>
+<?php endif; ?>
                         </ul>
                     </nav>
                 </header>
