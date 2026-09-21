@@ -27,7 +27,8 @@ class ViewHeader{
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>WORLD IS MINE - WIM</title>
-                <link rel="stylesheet" href="./css/styles.css">
+                <link rel="stylesheet" href="/assets/css/style.css">
+                <script defer src="/assets/js/main.js"></script>
             </head>
             <body>
                 <header>

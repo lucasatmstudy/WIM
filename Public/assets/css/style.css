@@ -8,17 +8,17 @@
 /* POLICE */
 @font-face {
     font-family: 'LexendBold';
-    src: url(./assets/police/Lexend/Lexend-Bold.ttf) format('truetype');
+    src: url(../police/Lexend/Lexend-Bold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'LexendRegular';
-    src: url(./assets/police/Lexend/Lexend-Regular.ttf) format('truetype');
+    src: url(../police/Lexend/Lexend-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Chiron-goround-tc800';
-    src: url(./assets/police/ChironGoRoundTC/chiron-goround-tc-v4-latin-800.woff2) format('truetype');
+    src: url(../police/ChironGoRoundTC/chiron-goround-tc-v4-latin-800.woff2) format('truetype');
 }
 
 /* ELEMENT GENERAL */

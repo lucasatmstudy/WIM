@@ -1,10 +1,10 @@
 {
-    "name": "bb-study/wim",
-    "authors": [
-        {
-            "name": "lucas",
-            "email": "lucasinfostudy@gmail.com"
+    "autoload": {
+        "psr-4": {
+            "Controller\\": "Controller/",
+            "Model\\": "Model/",
+            "View\\": "View/",
+            "Utils\\": "Utils/"
         }
-    ],
-    "require": {}
+    }
 }

@@ -2,7 +2,7 @@
 namespace Utils;
 
 use PDO;
-require_once 'env.php';
+require_once __DIR__ . '/../env.php';
 
 class Utils {
     public static function connect(): PDO {

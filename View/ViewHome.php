@@ -364,9 +364,9 @@ class ViewHome extends View {
         return $this;
     }
     
-    public function display(): void {
-        echo $this->buffer;
-    }
+    // public function display(): void {
+    //     echo $this->buffer;
+    // }
 
 }
 
