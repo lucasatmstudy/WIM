@@ -4,29 +4,20 @@ use View\View;
 
 class ViewHome extends View {
     //ATTRIBUT
-    // private bool $isConnect = false;
-    // private bool $hasFriends = false;
+    private array $albums = [];
 
     //CONSTRUCTOR
 
     //GETTER ET SETTER
-    // public function getIsConnect(): bool {
-    //     return $this->isConnect;
-    // }
+    public function getAlbums(): array {
+        return $this->albums;
+    }
 
-    // public function setIsConnect(bool $isConnect): self {
-    //     $this->isConnect = $isConnect;
-    //     return $this;
-    // }
-
-    // public function getHasFriends(): bool {
-    //     return $this->hasFriends;
-    // }
-
-    // public function setHasFriends(bool $hasFriends): self {
-    //     $this->hasFriends = $hasFriends;
-    //     return $this;
-    // }
+    public function setAlbums(array $albums): self {
+        $this->albums = $albums;
+        return $this;
+    }
+    
     //METHODS
     public function launchBuffer():self {
         ob_start();
@@ -91,66 +82,14 @@ class ViewHome extends View {
                     <a class="titreVoirPlus" href="Tout visiter">Tout voir</a>
                 </div>
                 <div class="mesAlbumBoite">
-                    <a class="tuileAlbum monAlbum1" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=450&fit=crop" alt="Photo Album">
+<?php foreach ($this->albums as $i => $album): ?>
+                    <a class="tuileAlbum monAlbum<?= $i + 1 ?>" href="A defini">
+                        <img class="imageTuile" src="<?= htmlspecialchars($album['url_photo'] ?? '', ENT_QUOTES) ?>" alt="Photo Album">
                         <div class="textP">
-                            <p class="titreAlbum">Irland</p>
+                            <p class="titreAlbum"><?= htmlspecialchars($album['title'], ENT_QUOTES) ?></p>
                         </div>
                     </a>
-                    <a class="tuileAlbum monAlbum2" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Zen</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum3" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Route 66</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum4" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">J'ai hâte</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum5" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=450&h=800&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">test texte dpasse avec beaucoup de mot</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum6" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Retour au source</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum7" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Camping</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum8" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Le plus beau</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum9" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=800&h=450&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Rex</p>
-                        </div>
-                    </a>
-                    <a class="tuileAlbum monAlbum10" href="A defini">
-                        <img class="imageTuile" src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=450&h=800&fit=crop" alt="Photo Album">
-                        <div class="textP">
-                            <p class="titreAlbum">Café</p>
-                        </div>
-                    </a>                    
+<?php endforeach; ?>
                 </div>
             </div>
         </section>
